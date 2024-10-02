@@ -1,6 +1,7 @@
 package org.example.aeroport_jakarta.entities;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class BaseEntity<T>{
 
@@ -11,10 +12,6 @@ public class BaseEntity<T>{
     private LocalDateTime updatedAt;
 
     public BaseEntity(){};
-
-    public BaseEntity(T id){
-        this.id = id;
-    }
 
     //region GET/SET
     public T getId() {
@@ -31,4 +28,25 @@ public class BaseEntity<T>{
     //endregion
 
 
+    @Override
+    public String toString() {
+        return "BaseEntity{" +
+                "id=" + id +
+                ", createAt=" + createAt +
+                ", updatedAt=" + updatedAt +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BaseEntity<?> that = (BaseEntity<?>) o;
+        return Objects.equals(id, that.id) && Objects.equals(createAt, that.createAt) && Objects.equals(updatedAt, that.updatedAt);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, createAt, updatedAt);
+    }
 }
