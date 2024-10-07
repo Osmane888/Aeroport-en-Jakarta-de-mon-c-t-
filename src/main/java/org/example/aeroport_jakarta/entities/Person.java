@@ -1,4 +1,29 @@
 package org.example.aeroport_jakarta.entities;
 
-public class Person extends BaseEntity{
+import jakarta.persistence.*;
+
+import java.sql.Date;
+
+@Table(
+        uniqueConstraints = {
+                @UniqueConstraint(name="nomPrenomUnique",
+                columnNames = {
+                        "firstname",
+                        "lastname"
+                })
+        }
+)
+@Entity
+public class Person extends BaseEntity<Long>{
+
+    private String firstname;
+
+    private String lastname;
+
+    @Temporal(TemporalType.DATE)
+    private Date birthDate;
+
+    public Person(){
+        super();
+    }
 }

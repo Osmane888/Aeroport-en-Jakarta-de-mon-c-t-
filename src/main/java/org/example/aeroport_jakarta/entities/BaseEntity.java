@@ -1,14 +1,23 @@
 package org.example.aeroport_jakarta.entities;
 
+import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+
 public class BaseEntity<T>{
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private T id;
 
+    @CreationTimestamp
     private LocalDateTime createAt;
 
+    @UpdateTimestamp
     private LocalDateTime updatedAt;
 
     public BaseEntity(){};
