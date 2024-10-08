@@ -2,7 +2,8 @@ package org.example.aeroport_jakarta.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Plane extends BaseEntity<String>{
@@ -10,9 +11,9 @@ public class Plane extends BaseEntity<String>{
     @Column
     private int nb_flights;
 
-    @OneToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Owner owner;
 
-    @OneToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private PlaneType planeType;
 }
