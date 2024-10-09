@@ -23,6 +23,9 @@ public class Person extends BaseEntity<Long>{
     @Temporal(TemporalType.DATE)
     private Date birthDate;
 
+    @Embedded
+    private Address address;
+
     public Person(){
         super();
     }

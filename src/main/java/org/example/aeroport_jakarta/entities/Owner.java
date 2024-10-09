@@ -18,4 +18,8 @@ public class Owner extends Person{
     public List<Plane> getPlanes() {
         return new ArrayList<>(this.planes);
     }
+
+    public void addPlane(Plane plane){
+
+    }
 }
