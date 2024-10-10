@@ -16,6 +16,7 @@ import java.util.Objects;
         }
 )
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Person extends BaseEntity<Long>{
 
     @Column(nullable = false, length = 123)

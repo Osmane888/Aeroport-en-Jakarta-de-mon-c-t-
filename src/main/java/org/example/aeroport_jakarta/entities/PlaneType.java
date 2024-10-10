@@ -15,9 +15,6 @@ public class PlaneType extends BaseEntity{
     @OneToMany(mappedBy = "planeType",fetch = FetchType.LAZY)
     private List<Plane> planes;
 
-    @ManyToMany(targetEntity = Mechanic.class, mappedBy = "id", fetch = FetchType.LAZY)
-    private Set<Mechanic> mechanics;
-
     public PlaneType(){};
 
     public List<Plane> getPlanes() {
