@@ -17,6 +17,7 @@ import java.util.Objects;
 )
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "Personnes")
 public class Person extends BaseEntity<Long>{
 
     @Column(nullable = false, length = 123)
