@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-public class PlaneType extends BaseEntity{
+public class PlaneType extends BaseEntity<Long>{
 
     @OneToMany(mappedBy = "planeType",fetch = FetchType.LAZY)
     private List<Plane> planes;

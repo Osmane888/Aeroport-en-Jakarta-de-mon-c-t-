@@ -1,6 +1,9 @@
 package org.example.aeroport_jakarta.entities;
 
-public class Maintenance extends BaseEntity{
+import jakarta.persistence.Entity;
+
+@Entity
+public class Maintenance extends BaseEntity<Long>{
 
 
 }

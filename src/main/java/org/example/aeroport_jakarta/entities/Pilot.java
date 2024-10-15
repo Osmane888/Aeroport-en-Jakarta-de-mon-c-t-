@@ -30,7 +30,6 @@ public class Pilot extends Person{
     }
     //endregion
 
-
     @Override
     public String toString() {
         return "Pilot{" +
